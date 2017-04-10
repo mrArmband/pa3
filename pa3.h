@@ -18,3 +18,12 @@ int countChars(string str, char toFind){
 	return count(str.begin(), str.end(), toFind);
 }
 
+bool isInString(string str, char toFind) {
+    bool found = false;
+    for(unsigned int i = 0; i < str.length(); i++){
+        if(str[i] == toFind) {
+            found = true;
+        }
+    }
+    return found;
+}

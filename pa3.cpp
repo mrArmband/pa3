@@ -25,6 +25,29 @@ int main(){
 	vector<string> syntaxErrors;
 	while (getline(contents, temp)){
 
+		if(isInString(temp, '+')){
+			operators.push_back("+");
+		}
+		if(isInString(temp, '-')){
+			operators.push_back("-");
+		}
+		if(isInString(temp, '*')){
+			operators.push_back("*");
+		}
+		if(isInString(temp, '/')){
+			operators.push_back("/");
+		}
+		if(isInString(temp, '=')){
+			operators.push_back("=");
+		}
+
+		if(isInString(temp, ',')){
+			operators.push_back(",");
+		}
+		if(isInString(temp, ';')){
+			operators.push_back(";");
+		}
+
 		if (hasUpper(temp)){
 			stringstream iss(temp);
 			iss >> temp;
@@ -46,7 +69,7 @@ int main(){
 					if(temp[temp.size()-1]!='1'){
 						syntaxErrors.push_back(")");
 					}
-					
+
 				else if (temp.compare("BEGIN") == 0){
 					keywords.push_back("BEGIN");
 				}
@@ -57,10 +80,29 @@ int main(){
 				}
 			}
 		}
-		
-		if (true){
-			cout << "I can't believe it's not butter!";
-		}
 	}
 
+	for (unsigned int i; i < keywords.size(); i++){
+		cout << "Keywords: " << keywords[i];
+	}
+
+	for (unsigned int i; i < identifiers.size(); i++){
+		cout << "Identifiers: " << identifiers[i];
+	}
+
+	for (unsigned int i; i < constants.size(); i++){
+		cout << "Constants: " << constants[i];
+	}
+
+	for (unsigned int i; i < operators.size(); i++){
+		cout << "Operators: " << operators[i];
+	}
+
+	for (unsigned int i; i < delimiters.size(); i++){
+		cout << "Delimiters: " << delimiters[i];
+	}
+
+	for (unsigned int i; i < syntaxErrors.size(); i++){
+		cout << "Syntax Errors: " << syntaxErrors[i];
+	}
 }
