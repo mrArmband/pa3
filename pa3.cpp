@@ -34,8 +34,19 @@ int main(){
 					keywords.push_back("FOR");
 					getline(contents, temp);
 					removeFromString(temp, " ");
+					if(countChars(temp, '(') != 1)
+						syntaxErrors.push_back("(");
+					}
+					if(countChars(temp, ')') != 1){
+						syntaxErrors.push_back(")");
+					}
+					if(temp[0]!='('){
+						syntaxErrors.push_back("(");
+					}
+					if(temp[temp.size()-1]!='1'){
+						syntaxErrors.push_back(")");
+					}
 					
-				}
 				else if (temp.compare("BEGIN") == 0){
 					keywords.push_back("BEGIN");
 				}
