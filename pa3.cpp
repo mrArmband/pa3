@@ -14,7 +14,7 @@ int main(){
 	getline(cin, fileName);
 
 	ifstream contents;
-	contents.open(fileName);
+	contents.open(fileName.c_str());
 
 	string temp;
 	vector<string> keywords;
@@ -26,10 +26,10 @@ int main(){
 	while (getline(contents, temp)){
 
 		if (hasUpper(temp)){
-			isstringstream iss(temp);
+			stringstream iss(temp);
 			iss >> temp;
 
-			if (isKeyword){
+			if (hasUpper(temp)){
 				if (temp.compare("FOR") == 0){
 					keywords.push_back("FOR");
 					getline(contents, temp);
@@ -47,7 +47,9 @@ int main(){
 			}
 		}
 		
-		if ()
+		if (true){
+			cout << "I can't believe it's not butter!";
+		}
 	}
 
 }
