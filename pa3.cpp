@@ -4,8 +4,8 @@
 #include <stack>
 #include <string>
 #include <algorithm>
+using namespace std;
 #include "pa3.h"
-using namespace std
 
 int main(){
 	cout << "Please enter the name of the input file:\n";
