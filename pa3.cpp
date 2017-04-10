@@ -4,6 +4,7 @@
 #include <stack>
 #include <string>
 #include <algorithm>
+#include <vector>
 using namespace std;
 #include "pa3.h"
 
@@ -16,7 +17,12 @@ int main(){
 	contents.open(fileName);
 
 	string temp;
-	vector<string> keywords, identifiers, constants, operators, delimiters, syntaxErrors;
+	vector<string> keywords;
+	vector<string> identifiers;
+	vector<string> constants;
+	vector<string> operators;
+	vector<string> delimiters;
+	vector<string> syntaxErrors;
 	while (getline(contents, temp)){
 
 		if (hasUpper(temp)){
@@ -40,16 +46,7 @@ int main(){
 				}
 			}
 		}
-
-		bool isKeyword = true;
-		for(int i=0; temp.length(); i++){
-			if (!isupper(temp[i])){
-				isKeyword = false;
-			}
-		}
 		
-
-		jgkj
 		if ()
 	}
 
