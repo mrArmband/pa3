@@ -13,3 +13,8 @@ void removeFromString(string &str, string charsToRemove) {
       str.erase(remove(str.begin(), str.end(), charsToRemove[i]), str.end());
    }
 }
+
+int countChars(string str, char toFind){
+	return count(str.begin(), str.end(), toFind);
+}
+
